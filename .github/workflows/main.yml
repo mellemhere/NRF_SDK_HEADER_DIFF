@@ -1,0 +1,18 @@
+# This is a basic workflow to help you get started with Actions
+
+on: push
+name: 🚀
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2.3.2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ftp.igga.com.br
+        username: ci.igga@igga.com.br
+        password: ${{ secrets.ftp_password }}
