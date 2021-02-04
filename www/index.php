@@ -63,8 +63,10 @@ if (!empty($_FILES)) {
         }
     }
 
-    fclose($leitura_ar_certo);
-    fclose($leitura_ar_diferenciado);
+    if($leitura_ar_certo && $leitura_ar_diferenciado) {
+        fclose($leitura_ar_certo);
+        fclose($leitura_ar_diferenciado);
+    }
 }
 ?>
 <html lang="en">
